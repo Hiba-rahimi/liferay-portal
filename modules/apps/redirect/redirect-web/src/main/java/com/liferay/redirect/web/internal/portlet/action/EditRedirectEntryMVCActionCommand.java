@@ -21,6 +21,8 @@ import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.DateFormatFactoryUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.Http;
+import com.liferay.portal.kernel.util.HttpUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
@@ -67,6 +69,11 @@ public class EditRedirectEntryMVCActionCommand extends BaseMVCActionCommand {
 		boolean updateChainedRedirectEntries = ParamUtil.getBoolean(
 			actionRequest, "updateChainedRedirectEntries");
 
+		if (!HttpUtil.hasProtocol(destinationURL)) {
+			destinationURL =
+				_http.getProtocol(actionRequest) + "://" + destinationURL;
+		}
+
 		try {
 			if (redirectEntryId == 0) {
 				_redirectEntryService.addRedirectEntry(
@@ -109,6 +116,9 @@ public class EditRedirectEntryMVCActionCommand extends BaseMVCActionCommand {
 				"yyyy-MM-dd", themeDisplay.getLocale()),
 			null);
 	}
+
+	@Reference
+	private Http _http;
 
 	@Reference
 	private RedirectEntryService _redirectEntryService;
