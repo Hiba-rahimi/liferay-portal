@@ -343,7 +343,7 @@ public class JournalArticleInfoItemFieldValuesUpdaterTest {
 	private Group _group;
 
 	@Inject(
-		filter = "model.class.name=com.liferay.journal.model.JournalArticle"
+		filter = "item.class.name=com.liferay.journal.model.JournalArticle"
 	)
 	private InfoItemFieldValuesUpdater<JournalArticle>
 		_journalArticleInfoItemFieldValuesUpdater;
