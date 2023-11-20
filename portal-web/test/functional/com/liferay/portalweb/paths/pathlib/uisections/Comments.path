@@ -66,6 +66,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>MORE_COMMENTS_BUTTON</td>
+	<td>//*[contains(@id, '_moreCommentsTrigger')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>USER_NAME</td>
 	<td>//div[contains(.,'${key_entryComment}')]//*[self::a or self::span][contains(@class,'username') and contains(.,'${key_userFullName}')] | //div[contains(.,'${key_entryComment}')]//*[self::a or self::span][contains(@class,'author-link') and contains(.,'${key_userFullName}')]</td>
 	<td></td>
