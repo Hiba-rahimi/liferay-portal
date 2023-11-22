@@ -8,11 +8,6 @@ definition {
 
 		User.firstLoginPG();
 
-<<<<<<< HEAD
-		Navigator.openURL();
-
-=======
->>>>>>> 07291af (LPS-192585 Automate LPS-154735)
 		JSONLayout.addPublicLayout(
 			groupName = "Guest",
 			layoutName = "Page Comments Page");
@@ -21,11 +16,6 @@ definition {
 			groupName = "Guest",
 			layoutName = "Page Comments Page",
 			widgetName = "Page Comments");
-<<<<<<< HEAD
-
-		Navigator.openURL();
-=======
->>>>>>> 07291af (LPS-192585 Automate LPS-154735)
 	}
 
 	tearDown {
@@ -54,28 +44,16 @@ definition {
 			Comments.addPG(entryComment = "This is a comment");
 
 			AssertClick(
-<<<<<<< HEAD
-				locator1 = "Comments#MORE_COMMENTS_BUTTON",
-=======
 				key_text = "More Comments",
 				locator1 = "Button#ANY",
->>>>>>> 07291af (LPS-192585 Automate LPS-154735)
 				value1 = "More Comments");
 
 			Comments.replyToComment(commentReply = "This is a reply comment");
 		}
 
 		task ("Then assert that both the comment and the reply can be viewed") {
-<<<<<<< HEAD
-			Click(locator1 = "Comments#MORE_COMMENTS_BUTTON");
-
-			AssertElementPresent(
-				key_entryComment = "This is a comment",
-				locator1 = "Comments#COMMENT_BODY_SPECIFIC");
-
-			AssertElementPresent(
-=======
-			Click(locator1 = "Button#ANY",
+			Click(
+				locator1 = "Button#ANY",
 				value1 = "More Comments");
 
 			AssertVisible(
@@ -83,7 +61,6 @@ definition {
 				locator1 = "Comments#COMMENT_BODY_SPECIFIC");
 
 			AssertVisible(
->>>>>>> 07291af (LPS-192585 Automate LPS-154735)
 				key_entryComment = "This is a reply comment",
 				locator1 = "Comments#COMMENT_BODY_SPECIFIC");
 		}
